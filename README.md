@@ -1,2 +1,2 @@
 # angular_learn
-学习型angular
+学习angular
