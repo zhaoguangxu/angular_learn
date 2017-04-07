@@ -106,3 +106,150 @@
    + AngularJS 应用程序由 ng-app 定义。应用程序在 <div> 内运行。
    + ng-controller="myCtrl" 属性是一个 AngularJS 指令。用于定义一个控制器。
    + myCtrl 函数是一个 JavaScript 函数。
+   + AngularJS 使用$scope 对象来调用控制器。
+   + 在 AngularJS 中， $scope 是一个应用对象(属于应用变量和函数)。
+   + 控制器的 $scope （相当于作用域、控制范围）用来保存AngularJS Model(模型)的对象。
+   + ng-model 指令绑定输入域到控制器的属性
+
+### 控制器方法
+1. 控制器也可以有方法（变量和函数）
+
+### 外部文件中的控制器
+1. 在大型的应用程序中，通常是把控制器存储在外部文件中。
+
+
+# AngularJS 过滤器
+1. 过滤器可以使用一个管道字符（|）添加到表达式和指令中。
+
+### AngularJS 过滤器
+1. AngularJS 过滤器可用于转换数据：
+    + currency:格式化数字为货币格式。
+    + filter:从数组项中选择一个子集。
+    + lowercase:格式化字符串为小写。
+    + orderBy:根据某个表达式排列数组。
+    + uppercase:格式化字符串为大写。
+
+### 表达式中添加过滤器
+1. 过滤器可以通过一个管道字符（|）和一个过滤器添加到表达式中。
+
+### currency 过滤器
+1. currency 过滤器将数字格式化为货币格式：
+
+### 向指令添加过滤器
+1. 过滤器可以通过一个管道字符（|）和一个过滤器添加到指令中。
+
+### 过滤输入
+1. 输入过滤器可以通过一个管道字符（|）和一个过滤器添加到指令中，该过滤器后跟一个冒号和一个模型名称。
+
+### 自定义过滤器
+
+# AngularJS 服务(Service)
+1. AngularJS 中你可以创建自己的服务，或使用内建服务。
+
+### 什么是服务？
+1. 在 AngularJS 中，服务是一个函数或对象，可在你的 AngularJS 应用中使用。
+2. AngularJS 内建了30 多个服务。
+3. 有个 $location 服务，它可以返回当前页面的 URL 地址。
+4. 注意 $location 服务是作为一个参数传递到 controller 中。如果要使用它，需要在 controller 中定义。
+
+### 为什么使用服务?
+1. AngularJS 会一直监控应用，处理事件变化， AngularJS 使用 $location 服务比使用 window.location 对象更好。
+
+### $http 服务
+1. $http 是 AngularJS 应用中最常用的服务。 服务向服务器发送请求，应用响应服务器传送过来的数据。
+
+### $timeout 服务
+1. AngularJS $timeout 服务对应了 JS window.setTimeout 函数。
+
+### $interval 服务
+1. AngularJS $interval 服务对应了 JS window.setInterval 函数。
+
+### 创建自定义服务
+1. 你可以创建访问自定义服务，链接到你的模块中：
+2. 当你创建了自定义服务，并连接到你的应用上后，你可以在控制器，指令，过滤器或其他服务中使用它。
+
+### 过滤器中，使用自定义服务
+1. 当你创建了自定义服务，并连接到你的应用上后，你可以在控制器，指令，过滤器或其他服务中使用它。
+
+### Angular的很多服务，在DOM中有对应的对象，那为什么不使用这些对象，而是要用服务呢？
+1. 因为这些服务可以获取到Angular应用声明周期的每一个阶段，并且和$watch整合，让Angular可以监控应用，处理事件变化。普通的DOM对象则不能在Angular应用声明周期中和应用整合。
+
+
+# AngularJS XMLHttpRequest
+1. $http 是 AngularJS 中的一个核心服务，用于读取远程服务器的数据。
+2. 简写方法:
+    + $http.get
+    + $http.head
+    + $http.post
+    + $http.put
+    + $http.delete
+    + $http.jsonp
+    + $http.patch
+
+### AngularJS $http
+1. AngularJS $http 是一个用于读取web服务器上数据的服务。
+2. $http.get(url) 是用于读取服务器数据的函数。
+
+# AngularJS Select(选择框)
+1. AngularJS 可以使用数组或对象创建一个下拉列表选项。
+
+### 使用 ng-options 创建选择框
+1. 在 AngularJS 中我们可以使用 ng-option 指令来创建一个下拉列表，列表项通过对象和数组循环输出.
+2. ng-init 设置默认选中值。
+
+### ng-options 与 ng-repeat
+1. ng-repeat 指令是通过数组来循环 HTML 代码来创建下拉列表，但 ng-options 指令更适合创建下拉列表，它有以下优势：
+使用 ng-options 的选项的一个对象， ng-repeat 是一个字符串。
+
+# AngularJS 表格
+1. ng-repeat 指令可以完美的显示表格。
+
+### 显示序号 ($index)
+1. 表格显示序号可以在 <td> 中添加 $index:
+
+### 使用 $even 和 $odd
+
+# AngularJS SQL
+1. 在前面章节中的代码也可以用于读取数据库中的数据。
+### 服务端代码
+1. 以下列出了几种服务端代码类型：
+    + 使用 PHP 和 MySQL。返回 JSON。
+    + 使用 PHP 和 MS Access。返回 JSON。
+    + 使用 ASP.NET, VB, 及 MS Access。 返回 JSON。
+    + 使用 ASP.NET, Razor, 及 SQL Lite。 返回 JSON。
+
+### 跨域 HTTP 请求
+1. 如果你需要从不同的服务器（不同域名）上获取数据就需要使用跨域 HTTP 请求。
+2. 跨域请求在网页上非常常见。很多网页从不同服务器上载入 CSS, 图片，Js脚本等。
+
+
+# AngularJS HTML DOM
+1. AngularJS 为 HTML DOM 元素的属性提供了绑定应用数据的指令。
+
+### ng-disabled 指令
+1. ng-disabled 指令直接绑定应用程序数据到 HTML 的 disabled 属性。
+
+### ng-show 指令
+1. ng-show 指令隐藏或显示一个 HTML 元素。
+
+### ng-hide 指令
+1. g-hide 指令用于隐藏或显示 HTML 元素。
+
+# AngularJS 事件
+1. AngularJS 有自己的 HTML 事件指令。
+
+### ng-click 指令
+1. ng-click 指令定义了 AngularJS 点击事件。
+
+### 隐藏 HTML 元素
+1. ng-hide 指令用于设置应用部分是否可见。
+
+### 显示 HTML 元素
+1. ng-show 指令可用于设置应用中的一部分是否可见
+
+
+# AngularJS 模块
+1. 模块定义了一个应用程序。
+2. 模块是应用程序中不同部分的容器。
+3. 模块是应用控制器的容器。
+4. 控制器通常属于一个模块。
