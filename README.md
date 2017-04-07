@@ -253,3 +253,17 @@
 2. 模块是应用程序中不同部分的容器。
 3. 模块是应用控制器的容器。
 4. 控制器通常属于一个模块。
+
+
+# AngularJS 表单
+1. AngularJS 表单是输入控件的集合。
+
+### HTML 控件
+1. 以下 HTML input 元素被称为 HTML 控件:
+   + input 元素
+   + select 元素
+   + button 元素
+   + textarea 元素
+
+### HTML 表单
+1. HTML 表单通常与 HTML 控件同时存在。 
