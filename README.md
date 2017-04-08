@@ -267,3 +267,7 @@
 
 ### HTML 表单
 1. HTML 表单通常与 HTML 控件同时存在。 
+
+
+# AngularJS 输入验证
+1. AngularJS 表单和控件可以验证输入的数据。
