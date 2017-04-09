@@ -271,3 +271,161 @@
 
 # AngularJS 输入验证
 1. AngularJS 表单和控件可以验证输入的数据。
+
+### 输入验证
+1. AngularJS 表单和控件可以提供验证功能，并对用户输入的非法数据进行警告。
+2. 客户端的验证不能确保用户输入数据的安全，所以服务端的数据验证也是必须的。
+3. HTML 表单属性 novalidate 用于禁用浏览器默认的验证。
+
+# AngularJS API
+1. API 意为 Application Programming Interface（应用程序编程接口）。
+
+### AngularJS 全局 API
+1. AngularJS 全局 API 用于执行常见任务的 JavaScript 函数集合，如：
+    + 比较对象
+    + 迭代对象
+    + 转换对象
+2. 全局 API 函数使用 angular 对象进行访问。
+3. 以下列出了一些通用的 API 函数：
+    + angular.lowercase() 转换字符串为小写
+    + angular.uppercase() 转换字符串为大写
+    + angular.isString()  判断给定的对象是否为字符串，如果是返回 true。
+    + angular.isNumber()  判断给定的对象是否为数字，如果是返回 true。
+
+### AngularJS Bootstrap
+1. AngularJS 的首选样式表是 Twitter Bootstrap， Twitter Bootstrap 是目前最受欢迎的前端框架。
+
+### Bootstrap
+1. 你可以在你的 AngularJS 应用中加入 Twitter Bootstrap，你可以在你的 <head>元素中添加
+
+# AngularJS 包含
+1. 在 AngularJS 中，你可以在 HTML 中包含 HTML 文件。
+
+### 在 HTML 中包含 HTML 文件
+1. 在 HTML 中，目前还不支持包含 HTML 文件的功能。
+
+### 服务端包含
+1. 大多服务端脚本都支持包含文件功能 (SSI： Server Side Includes)。
+2. 使用 SSI, 你可在 HTML 中包含 HTML 文件，并发送到客户端浏览器。
+
+### 客户端包含
+1. 通过 JavaScript 有很多种方式可以在 HTML 中包含 HTML 文件。
+2. 通常我们使用 http 请求 (AJAX) 从服务端获取数据，返回的数据我们可以通过 使用 innerHTML 写入到 HTML 元素中。
+
+### AngularJS 包含
+1. 使用 AngularJS, 你可以使用 ng-include 指令来包含 HTML 内容:
+
+### 包含 AngularJS 代码
+1. ng-include 指令除了可以包含 HTML 文件外，还可以包含 AngularJS 代码:
+
+### 跨域包含
+1. 默认情况下， ng-include 指令不允许包含其他域名的文件。
+2. 如果你需要包含其他域名的文件，你需要设置域名访问白名单：
+
+# AngularJS 动画
+1. AngularJS 提供了动画效果，可以配合 CSS 使用。
+2. AngularJS 使用动画需要引入 angular-animate.min.js 库。
+3. 还需在应用中使用模型 ngAnimate：
+4. 应用中动画不宜太多，但合适的使用动画可以增加页面的丰富性，也可以更易让用户理解。
+5. 如果我们应用已经设置了应用名，可以把 ngAnimate 直接添加在模型中
+
+### ngAnimate 做了什么?
+1. ngAnimate 模型可以添加或移除 class 。
+2. ngAnimate 模型并不能使 HTML 元素产生动画，但是 ngAnimate 会监测事件，类似隐藏显示 HTML 元素 ，如果事件发生 ngAnimate 就会使用预定义的 class 来设置 HTML 元素的动画。
+3. AngularJS 添加/移除 class 的指令:
+   + ng-show
+   + ng-hide
+   + ng-class
+   + ng-view
+   + ng-include
+   + ng-repeat
+   + ng-if
+   + ng-switch
+4. ng-show 和 ng-hide 指令用于添加或移除 ng-hide class 的值。
+5. 其他指令会在进入 DOM 会添加 ng-enter 类，移除 DOM 会添加 ng-leave 属性。
+6. 当 HTML 元素位置改变时，ng-repeat 指令同样可以添加 ng-move 类 。
+7. 此外， 在动画完成后，HTML 元素的类集合将被移除。例如： ng-hide 指令会添加一下类：
+   + ng-animate
+   + ng-hide-animate
+   + ng-hide-add (如果元素将被隐藏)
+   + ng-hide-remove (如果元素将显示)
+   + ng-hide-add-active (如果元素将隐藏)
+   + ng-hide-remove-active (如果元素将显示)
+
+### 使用 CSS 动画
+1. 我们可以使用 CSS transition(过渡) 或 CSS 动画让 HTML 元素产生动画效果
+
+##### CSS 过渡
+1. CSS 过渡可以让我们平滑的将一个 CSS 属性值修改为另外一个：
+
+##### CSS 动画
+1. CSS 动画允许你平滑的修改 CSS 属性值:
+
+# AngularJS 依赖注入
+
+### 什么是依赖注入
+1. wiki 上的解释是：依赖注入（Dependency Injection，简称DI）是一种软件设计模式，在这种模式下，一个或更多的依赖（或服务）被注入（或者通过引用传递）到一个独立的对象（或客户端）中，然后成为了该客户端状态的一部分。
+2. 该模式分离了客户端依赖本身行为的创建，这使得程序设计变得松耦合，并遵循了依赖反转和单一职责原则。与服务定位器模式形成直接对比的是，它允许客户端了解客户端如何使用该系统找到依赖
+3. 一句话 --- 没事你不要来找我，有事我会去找你。
+4. AngularJS 提供很好的依赖注入机制。以下5个核心组件用来作为依赖注入：
+    + value
+    + factory
+    + service
+    + provider
+    + constant
+
+### value
+1. Value 是一个简单的 javascript 对象，用于向控制器传递值（配置阶段）：
+
+### factory
+1. factory 是一个函数用于返回值。在 service 和 controller 需要时创建。
+2. 通常我们使用 factory 函数来计算或返回值。
+
+### provider
+1. AngularJS 中通过 provider 创建一个 service、factory等(配置阶段)。
+2. Provider 中提供了一个 factory 方法 get()，它用于返回 value/service/factory。
+
+### constant
+1. constant(常量)用来在配置阶段传递数值，注意这个常量在配置阶段是不可用的。
+
+
+# AngularJS 路由
+1. AngularJS 路由允许我们通过不同的 URL 访问不同的内容。
+2. 通过 AngularJS 可以实现多视图的单页Web应用（single page web application，SPA）。
+3. 通常我们的URL形式为 http://runoob.com/first/page，但在单页Web应用中 AngularJS 通过 # + 标记 实现
+4. 当我们点击以上的任意一个链接时，向服务端请的地址都是一样的 (http://runoob.com/)。 因为 # 号之后的内容在向服务端请求时会被浏览器忽略掉。 所以我们就需要在客户端实现 # 号后面内容的功能实现。 AngularJS 路由 就通过 # + 标记 帮助我们区分不同的逻辑页面并将不同的页面绑定到对应的控制器上。
+
+### 实例解析：
+1. 载入了实现路由的 js 文件：angular-route.js。
+2. 包含了 ngRoute 模块作为主应用模块的依赖模块。
+3. 使用 ngView 指令。
+4. 配置 $routeProvider，AngularJS $routeProvider 用来定义路由规则。
+
+注：AngularJS 模块的 config 函数用于配置路由规则。通过使用 configAPI，我们请求把$routeProvider注入到我们的配置函数并且使用$routeProvider.whenAPI来定义我们的路由规则。
+
+注：$routeProvider 为我们提供了 when(path,object) & otherwise(object) 函数按顺序定义所有路由，函数包含两个参数:
+    + 第一个参数是 URL 或者 URL 正则规则。
+    + 第二个参数是路由配置对象。
+
+
+
+### 路由设置对象
+1. AngularJS 路由也可以通过不同的模板来实现。
+2. $routeProvider.when 函数的第一个参数是 URL 或者 URL 正则规则，第二个参数为路由配置对象。
+3. 路由配置对象语法规则如下：
+$routeProvider.when(url, {
+    template: string,
+    templateUrl: string,
+    controller: string, function 或 array,
+    controllerAs: string,
+    redirectTo: string, function,
+    resolve: object<key, function>
+});
+
+4. 参数说明：
+    + template: 如果我们只需要在 ng-view 中插入简单的 HTML 内容，则使用该参数
+    + templateUrl: 如果我们只需要在 ng-view 中插入 HTML 模板文件，则使用该参数
+    + controller：function、string或数组类型，在当前模板上执行的controller函数，生成新的scope。
+    + controllerAs: string类型，为controller指定别名。
+    + redirectTo: 重定向的地址。
+    + resolve: 指定当前controller所依赖的其他模块。
